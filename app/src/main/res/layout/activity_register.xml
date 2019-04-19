@@ -7,6 +7,14 @@
     android:orientation="vertical"
     android:layout_margin="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gastos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16sp"/>
+
     <EditText
         android:id="@+id/detail_input"
         android:layout_width="match_parent"
@@ -26,7 +34,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar gasto"
-        android:onClick="register"/>
+        android:onClick="register"
+        android:background="#68D3BB"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16sp"/>
 
     <EditText
         android:id="@+id/detalle_ingresos"
@@ -47,6 +64,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar ingreso"
-        android:onClick="registerIngresos"/>
+        android:onClick="registerIngresos"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="#FFB900"/>
 
 </LinearLayout>

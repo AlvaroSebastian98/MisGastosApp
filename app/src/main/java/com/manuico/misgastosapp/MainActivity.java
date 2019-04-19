@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView list;
     private TextView totalFinal;
 
+    private Pie pie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
 
         list.setAdapter(adapter);
+
+        pie = AnyChart.pie();
+
+        AnyChartView anyChartView = (AnyChartView) findViewById(R.id.any_chart_view);
+        anyChartView.setChart(pie);
     }
 
     public void addItem(View view){
@@ -68,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println(gastos);
 
-        Pie pie = AnyChart.pie();
         List<DataEntry> data2 = new ArrayList<>();
 
         for (Gasto gasto : gastos) {
@@ -84,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         pie.data(data2);
-
-        AnyChartView anyChartView = (AnyChartView) findViewById(R.id.any_chart_view);
-        anyChartView.setChart(pie);
 
         adapter.notifyDataSetChanged();
 
